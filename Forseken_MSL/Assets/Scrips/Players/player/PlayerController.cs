@@ -4,11 +4,11 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player_Controller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private float horizontalInput;
     
-    [SerializeField] Status_Player statusPlayer;
+    [SerializeField] StatusPlayer statusPlayer;
     [SerializeField] private Animator anim;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -117,16 +117,16 @@ public class Player_Controller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && IsGrounded())
         {
-            
+            // Debug.Log(comboStep);
             if (comboStep == 0)
             {
                 Attack_base();
-                comboStep++;
+                comboStep ++;
             }
             else if (comboStep == 1)
             {
                 Combo_1();
-                comboStep++;
+                comboStep ++;
             }
         }
         if (Input.GetKeyDown(KeyCode.E) && IsGrounded())
@@ -197,7 +197,7 @@ public class Player_Controller : MonoBehaviour
     private void Combo_1()
     {
         anim.SetInteger("ComboCount", comboStep);
-        lastClickTime = Time.time;
+        lastClickTime = Time.time + 0.25f;
     }
     private void Combo_E()
     {

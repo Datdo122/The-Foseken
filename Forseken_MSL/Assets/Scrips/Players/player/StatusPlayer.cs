@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Status_Player : MonoBehaviour
+public class StatusPlayer : MonoBehaviour
 {
     public float healthPlayer = 1000;//sẽ mã hóa lại chỉ số sau
     public float manaPlayer = 100;

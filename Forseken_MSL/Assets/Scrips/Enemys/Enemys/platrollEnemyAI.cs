@@ -62,27 +62,7 @@ public class platrollEnemyAI : MonoBehaviour
             }
         }
         FlipTowardsVelocity();
-        Debug.Log(speedEnemy);
-    }
-
-    void OnEnable()
-    {
-        // 1. Nếu lúc bị tắt script quái đang chờ, thì bây giờ bắt nó thôi chờ
-        isWaiting = false; 
-        timer = 0;
-
-        // 2. Nhả phanh tay NavMesh
-        if (navMeshAgent != null)
-        {
-            navMeshAgent.isStopped = false;
-
-            // 3. Quan trọng nhất: Nạp lại đích đến là Waypoint hiện tại
-            // Bất kể quái đang ở đâu (cách 2m hay 20m), nó sẽ phải đi về đó
-            if (waypoints.Length > 0)
-            {
-                SetDistination();
-            }
-        }
+        // Debug.Log(speedEnemy);
     }
 
     public void SetDistination()
